@@ -1,0 +1,6 @@
+node('WSOH0019APBLD03') {
+    // some block
+checkout([$class: 'GitSCM', branches: [[name: '*/master'], [name: '*/webcheckout']], browser: [$class: 'BitbucketWeb', repoUrl: 'https://gittestbucket@bitbucket.org/gittestbucket/webfiles.git'], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '60c75759-d328-43d4-82e1-0305b8e62bad', name: 'MyTest Bit Bucket', url: 'https://gittestbucket@bitbucket.org/gittestbucket/webfiles.git']]])
+}
+
+build 'AWS_Service'
